@@ -2,7 +2,7 @@
 #define CUSTOMER_H
 #include <vector>
 #include "order.h"
-
+#include <string>
 class Customer {
 private:
     std::string name;

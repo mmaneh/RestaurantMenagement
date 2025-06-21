@@ -8,7 +8,7 @@ Dish::Dish(const Dish& other) {
        	price = other.price;
 }
 
-Dish::Dish(Dish&& other) {
+Dish::Dish(Dish&& other) noexcept {
 	name = other.name;
 	price = other.price;
 	other.price = 0.0;

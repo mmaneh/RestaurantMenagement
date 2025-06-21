@@ -1,6 +1,7 @@
 #ifndef DESSERT_H
 #define DESSERT_H
 #include "dish.h"
+#include <string>
 
 class Dessert : public Dish {
 private:

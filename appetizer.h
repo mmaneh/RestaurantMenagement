@@ -1,7 +1,7 @@
 #ifndef APPETIZER_H
 #define APPETIZER_
 #include "dish.h"
-
+#include <string>
 class Appetizer : public Dish {
 private:
     bool isSpicy;
