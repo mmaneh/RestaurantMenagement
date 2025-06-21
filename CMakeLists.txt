@@ -4,30 +4,41 @@ project(RestaurantManagement)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-set(SOURCES
-    appetizer.cpp
-    dessert.cpp
+# Main application executable
+add_executable(restaurant_app
+    main.cpp
     dish.cpp
-    entree.cpp
-    menu.cpp
     customer.cpp
     order.cpp
+    appetizer.cpp
+    dessert.cpp
+    entree.cpp
+    menu.cpp
     restaurant.cpp
-    main.cpp
 )
 
-add_executable(restaurant_app ${SOURCES})
-
+# Google Test
 enable_testing()
+find_package(GTest REQUIRED)
 
-add_executable(restaurant_tests
-    test/test_dish.cpp
+# Test executable
+add_executable(run_tests
+    test/test_main.cpp
     dish.cpp
+    customer.cpp
+    order.cpp
+    appetizer.cpp
+    dessert.cpp
+    entree.cpp
+    menu.cpp
+    restaurant.cpp
 )
 
-find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS})
+target_link_libraries(run_tests
+    GTest::gtest
+    GTest::gtest_main
+    pthread
+)
 
-target_link_libraries(restaurant_tests ${GTEST_LIBRARIES} pthread)
+add_test(NAME AllTests COMMAND run_tests)
 
-add_test(NAME DishTest COMMAND restaurant_tests)

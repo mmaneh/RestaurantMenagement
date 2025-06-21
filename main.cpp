@@ -1,4 +1,4 @@
-#include "Restaurant.h"
+#include "restaurant.h"
 
 int main() {
     Restaurant restaurant;

@@ -1,6 +1,8 @@
 #include "menu.h"
 #include <iostream>
 
+Menu::Menu(){}
+Menu::~Menu() {}
 Menu::Menu(const Menu& other) {
 	for (int i = 0; i < other.dishes.size(); ++i) {
 		dishes.emplace_back(other.dishes[i]);
@@ -38,8 +40,8 @@ void Menu::displayMenu() const {
 
 Dish* Menu::getDishByName(const std::string& dishName) const {
     for (int i = 0; i < dishes.size(); ++i) {
-        if (dish->getName() == dishName) {
-            return dish;
+        if (dishes[i]->getName() == dishName) {
+            return dishes[i];
         }
     }
     return nullptr;

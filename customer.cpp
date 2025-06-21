@@ -11,7 +11,7 @@ Customer& Customer::operator= (const Customer& other) {
 		contactInfo = other.contactInfo;
 		orderHistory = other.orderHistory;
 	}
-	retrun *this;
+	return *this;
 }
 
 Customer::Customer(Customer&& other) noexcept {
@@ -21,10 +21,10 @@ Customer::Customer(Customer&& other) noexcept {
 		orderHistory = other.orderHistory;
 
 	}
-	return *this;
+	
 }
 
-Customer& Customer::operator= (Cumtomer&& other) noexcept {
+Customer& Customer::operator= (Customer&& other) noexcept {
 	if(this != &other) {
                 name = other.name;
                 contactInfo = other.contactInfo;
@@ -37,7 +37,7 @@ void Customer::placeOrder(Order order) {
 	orderHistory.emplace_back(order);
 }
 
-void Customer::viewOrderHistory() {
+void Customer::viewOrderHistory() const {
 	for (int i = 0; i < orderHistory.size(); ++i) {
 		orderHistory[i].displayOrder();
 	}
