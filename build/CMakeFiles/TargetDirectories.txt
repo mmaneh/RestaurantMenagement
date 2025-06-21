@@ -1,5 +1,0 @@
-/home/mane/Desktop/RestaurantMenagement/build/CMakeFiles/restaurant_app.dir
-/home/mane/Desktop/RestaurantMenagement/build/CMakeFiles/restaurant_tests.dir
-/home/mane/Desktop/RestaurantMenagement/build/CMakeFiles/test.dir
-/home/mane/Desktop/RestaurantMenagement/build/CMakeFiles/edit_cache.dir
-/home/mane/Desktop/RestaurantMenagement/build/CMakeFiles/rebuild_cache.dir

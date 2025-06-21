@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/restaurant_tests.dir/test/test_dish.cpp.o CMakeFiles/restaurant_tests.dir/dish.cpp.o -o restaurant_tests  /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 
