@@ -1,7 +1,7 @@
 #include "dish.h"
 #include <iostream>
 
-Dish::Dish(std::string dishName, double dishPrice) : name(dishName), price(dishprice){}
+Dish::Dish(std::string dishName, double dishPrice) : name(dishName), price(dishPrice){}
 
 Dish::Dish(const Dish& other) {
 	name = other.name;
@@ -15,15 +15,15 @@ Dish::Dish(Dish&& other) {
 }
 
 Dish& Dish::operator =(const Dish& other){
-	if(this != other) {
+	if(this != &other) {
 		name = other.name;
 		price = other.price;
 	}
 	return *this;
 }
 
-Dish& Dish::operator =(const Dish&& other) noexcept{
-	if (this != other) {
+Dish& Dish::operator =(Dish&& other) noexcept{
+	if (this != &other) {
 		name = other.name;
 		price = other.price;
 		other.price = 0.0;
@@ -31,15 +31,15 @@ Dish& Dish::operator =(const Dish&& other) noexcept{
 	return *this;
 }
 
-void display() const {
+void Dish::display() const {
 	std::cout << name;
 	std::cout << price;
 }
 
-double getPrice() const {
+double Dish::getPrice() const {
 	return price;
 }
 
-std::string getName() const {
+std::string Dish::getName() const {
 	return name;
 }
